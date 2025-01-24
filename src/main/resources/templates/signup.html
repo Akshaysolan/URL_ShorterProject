@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            text-align: center;
+            font-size: 14px;
+            color: red;
+        }
+
+        a {
+            text-align: center;
+            display: block;
+            font-size: 14px;
+            color: #007BFF;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>Signup</h1>
+<form th:action="@{/register}" th:object="${user}" method="post">
+    <label>Username:</label>
+    <input type="text" th:field="*{username}" required/><br/>
+    <label>Password:</label>
+    <input type="password" th:field="*{password}" required/><br/>
+    <button type="submit">Register</button>
+</form>
+<p th:if="${error}" style="color: red;">[[${error}]]</p>
+<a href="/login">Already have an account? Login</a>
+</body>
+</html>
