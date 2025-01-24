@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            margin-bottom: 2em;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>URL Shortener</h1>
+    </header>
 
+    <div class="container">
+        <form th:action="@{/process}" method="post" th:object="${urlModel}">
+            <label for="longUrl">Enter Long URL:</label>
+            <input type="text" id="longUrl" th:field="*{longUrl}" placeholder="Enter a long URL" required />
+
+            <label for="shortUrl">Shortened URL:</label>
+            <input type="text" id="shortUrl" th:value="${shortUrl}" readonly />
+            
+            <button type="submit">Shorten URL</button>
+        </form>
+    </div>
 </body>
 </html>

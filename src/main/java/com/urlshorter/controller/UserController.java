@@ -23,6 +23,7 @@ public class UserController {
     @PostMapping("/register")
     public String registerUser(User user, Model model) {
         if (userService.findByUsername(user.getUsername()) != null) {
+        	user.setUsername("");
             model.addAttribute("error", "Username already exists");
             return "signup";
         }
