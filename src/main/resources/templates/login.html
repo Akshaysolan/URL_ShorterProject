@@ -5,18 +5,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
+           background: linear-gradient(to bottom right, #fceabb, #f8b500, #f76b1c);
         }
 
         .form-container {
@@ -26,6 +21,12 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
         }
 
         label {
@@ -46,7 +47,7 @@
         button {
             width: 100%;
             padding: 12px;
-            background-color: #4CAF50;
+            background-color: blue;
             color: white;
             border: none;
             border-radius: 5px;
@@ -81,11 +82,15 @@
             color: green;
             text-align: center;
         }
+
+        .signup-container {
+            display: none;
+        }
     </style>
 </head>
 <body>
-<h1>Login</h1>
 <div class="form-container">
+    <h1>Login</h1>
     <form th:action="@{/login}" method="post">
         <label>Username:</label>
         <input type="text" name="username" required/><br/>

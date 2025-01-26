@@ -1,4 +1,4 @@
-version: '3.8'
+
 
 services:
   urlshorter:
@@ -27,7 +27,7 @@ services:
       MYSQL_ROOT_PASSWORD: Akshay
       MYSQL_DATABASE: urlshorter
     ports:
-      - ":3306"  # Explicit port mapping
+      - ":3306" 
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
