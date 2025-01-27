@@ -22,4 +22,4 @@ To run this project, ensure you have the following installed:
 - **Bitly API Key**
 
 ---
-
+![image alt](https://github.com/Akshaysolan/URL_ShorterProject/blob/48bd9f5342c8eea0680740b3e575eb28d9684fb4/Screenshot%202025-01-27%20212234.png)
