@@ -94,7 +94,6 @@
         <input type="password" th:field="*{password}" required/><br/>
         <button type="submit">Register</button>
     </form>
-
     <p th:if="${error}" class="error-msg">[[${error}]]</p>
     <a href="/login">Already have an account? Login</a>
 </div>

@@ -13,7 +13,7 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
-
+    
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -25,6 +25,7 @@ public class UserService {
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
+    
     public boolean validateUser(String username, String rawPassword) {
         User user = userRepository.findByUsername(username);
         if (user != null && passwordEncoder.matches(rawPassword, user.getPassword())) {

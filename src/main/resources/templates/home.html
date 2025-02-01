@@ -17,6 +17,33 @@
             text-align: center;
         }
 
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .logout-button {
+            background: linear-gradient(135deg, #fe4c4c, #ff7676);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            margin-right: 20px;
+        }
+
+        .logout-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
         h1 {
             font-size: 3em;
             color: #ffffff;
@@ -63,6 +90,12 @@
     </style>
 </head>
 <body>
+    <header>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </header>
+    
     <h1>Welcome to the Home Page</h1>
     <a th:href="@{/index}">Urlshort</a>
 </body>

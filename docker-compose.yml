@@ -22,12 +22,12 @@ services:
 
   mysql-db:
     image: mysql:5.7
-    container_name: mysql-container
+    container_name: my-container
     environment:
       MYSQL_ROOT_PASSWORD: Akshay
       MYSQL_DATABASE: urlshorter
     ports:
-      - ":3306" 
+      - "3307:3306" 
     volumes:
       - mysql-data:/var/lib/mysql
     networks:

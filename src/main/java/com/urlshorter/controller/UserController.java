@@ -19,8 +19,8 @@ public class UserController {
         model.addAttribute("user", new User());
         return "signup";
     }
-
-    @PostMapping("/register")
+    
+	@PostMapping("/register")
     public String registerUser(User user, Model model) {
         if (userService.findByUsername(user.getUsername()) != null) {
         	user.setUsername("");
@@ -39,7 +39,7 @@ public class UserController {
     @PostMapping("/login")
     public String loginUser(String username, String password, Model model) {
         if (userService.validateUser(username, password)) {
-            return "redirect:/home"; 
+            return "redirect:/"; 
         } else {
             model.addAttribute("error", "Invalid username or password");
             return "login";  
@@ -47,7 +47,7 @@ public class UserController {
     }
     
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String showHomePage() {
         return "home";
     }
